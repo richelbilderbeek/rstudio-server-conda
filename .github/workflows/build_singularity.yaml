@@ -9,6 +9,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    singularity_version: '3.7.4'
+    container:
+      image: quay.io/singularity/singularity:v${{ matrix.singularity_version }}
+      options: --privileged
+
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
